@@ -1,0 +1,8 @@
+import vo.Worker;
+import product.ErrorMessages;
+
+rule "no_numeral_in_name"
+
+when
+	worker:Worker();
+
