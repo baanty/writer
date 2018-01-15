@@ -1,5 +1,5 @@
 package batch;
 
-public class CamelRouteConfig extends RouteBuilder{
+public class CamelRouteConfig {//  extends RouteBuilder{
 
 }
