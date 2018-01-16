@@ -27,7 +27,7 @@ public class NameValidatorTest {
     
     @Test
     public void test() {
-        RequestVO request = new RequestVO("45test819");
+        RequestVO request = new RequestVO("45test819","ABCDERFHT");
         Set<ConstraintViolation<RequestVO>> violations = validator.validate(request);
         violations.stream().forEach(violation -> System.out.println(violation.getMessage()));
         Set<String> msgs = violations.stream().map(ConstraintViolation::getMessage).collect(Collectors.toSet());
