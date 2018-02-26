@@ -12,11 +12,12 @@ import lombok.Data;
 @NumericValidator
 public class RequestVO {
 
-    @NotNull
+    @NotNull.List(
+            {@NotNull(message = "First Not Null Message"),@NotNull(message = "Second Not Null Message")})
     private final String name;
     
     @NotNull
-    @Pattern(message = "Giin is not valid", regexp = "[A-Za-z0-9 && [^^oO]]{6}.[A-Za-z0-9 && [^^oO]]{5}.[A-Za-z0-9 && [^^oO]]{2}.[A-Za-z0-9 && [^^oO]]{3}")
+    @Pattern(message = "Giin is not valid", regexp = "[A-Za-z0-9 && [^^oO]]{6}[.][A-Za-z0-9 && [^^oO]]{5}[.][A-Za-z0-9 && [^^oO]]{2}[.][A-Za-z0-9 && [^^oO]]{3}")
     private final String giin;
     
 }

@@ -14,7 +14,7 @@ public class NumericValidatorImpl implements ConstraintValidator<NumericValidato
 
     @Override
     public boolean isValid(RequestVO value, ConstraintValidatorContext context) {
-        if(value.getName().contains("1")){
+        if(value != null && value.getName() != null && value.getName().contains("1")){
             return false;
         }
         return true;

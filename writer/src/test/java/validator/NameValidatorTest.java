@@ -27,11 +27,12 @@ public class NameValidatorTest {
     
     @Test
     public void test() {
-        RequestVO request = new RequestVO("45test819","ABCDERFHT");
+        RequestVO request = new RequestVO(null,"123456x12345.12.123");
         Set<ConstraintViolation<RequestVO>> violations = validator.validate(request);
         violations.stream().forEach(violation -> System.out.println(violation.getMessage()));
         Set<String> msgs = violations.stream().map(ConstraintViolation::getMessage).collect(Collectors.toSet());
         assertTrue(msgs.contains("Name Has 'test' text . It is not allowed."));
+        assertTrue(msgs.contains("Giin is not valid"));
         assertTrue(msgs.contains("Numeric Validtor Test Failed"));
         assertFalse(msgs.contains("Name Validtor Test Failed"));
     }
