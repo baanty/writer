@@ -18,7 +18,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.List;
+
+import org.springframework.util.CollectionUtils;
 
 /**
  * @author WE43MM
@@ -55,6 +58,12 @@ public class FileSizeHashingTest {
             //System.out.println("File Checksum with String is - "+currentInstance.getFileCheckSumString(fileName, salt));
             System.out.println("File Checksum with String is - "+currentInstance.getFileCheckSumString(fileName, salt));
             System.out.println("File Checksum with byte array is - "+currentInstance.getFileCheckSumStringFromByteArray(fileName, salt));
+            
+            String[] tester = new String[]{};
+            
+            Arrays.asList(tester).contains("");
+            
+            CollectionUtils.containsAny(Arrays.asList(tester), Arrays.asList("",""));
             
         } catch (Exception e) {
             e.printStackTrace();
