@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,6 +29,7 @@ public class UtilityTest {
         assertFalse(Utility.isIn(messagesToTest, new String[]{}));
         assertFalse(Utility.isIn(null));
         assertFalse(Utility.isIn(new HashSet<>(), "X.1"));
+        assertFalse(Utility.isIn(new TreeSet<>(), "X.1"));
     }
 
 }
