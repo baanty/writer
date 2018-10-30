@@ -10,7 +10,19 @@ import java.util.concurrent.TimeUnit;
 
 public class MainRunner {
 
+    public static final String PI_GET_KYC_PI_AUDIT_IDS_SQL = 
+            "SELECT KYC_AUDIT_ID " 
+                  + "FROM KYC_PI_AUDIT "
+                  + "WHERE (NVL(EXPORT_DATE, TO_DATE('01/01/2090', 'DD/MM/YYYY')) = TO_DATE('01/01/2090', 'DD/MM/YYYY')) "
+                  + "AND ING_COUNTRY = :1 "
+                  + "AND ROWNUM <=:2 " ;
+
+
+    
+    
+    
     public static void main(String[] args) throws ParseException{
+        System.out.println(PI_GET_KYC_PI_AUDIT_IDS_SQL);
         System.out.println("Running Main");
         dateTest();
     }

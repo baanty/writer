@@ -1,12 +1,18 @@
 package util;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
 public class Utility {
+    
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     /**
      * @param keys Collection of keys
@@ -33,5 +39,15 @@ public class Utility {
     public static final String getTimeStamp() {
         LocalDateTime localDateTime = LocalDateTime.now();
         return String.valueOf(localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+    }
+    
+    public static final String getDateTimeStamp() {
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyyMMddHHmm");//dd/MM/yyyy
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        //strDate.replace(" ", "").replace(":", "").replace("-", "").replaceAll(arg0, arg1)
+        
+        //String currentDate = LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE) + LocalDate.now().format(FORMATTER);
+        return strDate;
     }
 }
